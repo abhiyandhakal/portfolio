@@ -5,19 +5,21 @@ $nav-height: 4rem;
 $nav-list-item-pseudo-breadth: 0.1em;
 
 header nav {
+  box-shadow: 0 0 10px #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $nav-height;
   background: $header-footer-bg;
-
+  position: relative;
+  
   .logo {
     padding-left: 1rem;
-
+    
     img {
       height: $nav-height * 0.7;
     }
-
+    
     a:focus {
       outline: 1px solid currentColor;
     }
@@ -27,7 +29,8 @@ header nav {
 .nav-list {
   display: flex;
   list-style-type: none;
-
+  background: $header-footer-bg;
+  
   .nav-list-item {
     margin: 0 1em;
     font-size: 1.1rem;
@@ -83,6 +86,106 @@ header nav {
     &:focus {
       outline-offset: $nav-list-item-pseudo-breadth * 3;
       outline: $nav-list-item-pseudo-breadth solid currentColor;
+    }
+  }
+}
+
+#toggler{
+  display: none;
+}
+
+.toggler{
+  width: 2rem;
+  height: $nav-height;
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+  .hamburger{
+    height: $nav-list-item-pseudo-breadth;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 35%;
+    background-color: $text-color;
+    transition: transform .5s;
+    
+    
+    &::before{
+      content: '';
+      height: $nav-list-item-pseudo-breadth;
+      width: 100%;
+      background-color: $text-color;
+      display: block;
+      position: absolute;
+      border-radius: 35%;
+      top: -$nav-list-item-pseudo-breadth*5;
+      opacity: 1;
+      transition: opacity .1s .1s;
+    }
+    &::after{
+      content: '';
+      height: $nav-list-item-pseudo-breadth;
+      width: 100%;
+      border-radius: 35%;
+      background-color: $text-color;
+      display: block;
+      position: absolute;
+      bottom: -$nav-list-item-pseudo-breadth*5;
+      transition: transform .5s;
+    }
+  }
+}
+
+@media (max-width: 50rem) {
+  nav{
+    box-shadow: unset;
+  }
+  
+  .nav-list{
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .4s ease-in-out;
+    
+    .nav-list-item{
+      margin: 1.3rem;
+      opacity: 0;
+      transition: opacity .2s ease-out;
+    }
+  }
+  
+  .toggler{
+    display: block;
+    margin: 0 1rem;
+  }
+  
+  #toggler:checked + .toggler{
+    .hamburger{
+      transform: rotate(45deg) translate(-50%, -50%);
+      
+      &::before{
+        opacity: 0;
+        transition: opacity .1s;
+      }
+      &::after{
+        transform: rotate(-90deg) translate(25%);
+      }
+    }
+  }
+  
+  #toggler:checked ~ .nav-list{
+    transform: scaleY(1);
+    
+    .nav-list-item{
+      opacity: 1;
+      transition: opacity .5s ease-out .3s;
     }
   }
 }
