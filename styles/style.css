@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Patrick+Hand&family=Press+Start+2P&family=Varela+Round&display=swap");
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4rem;
+  background: rgba(100, 70, 68, 0.9);
+}
+
+header nav .logo {
+  padding-left: 1rem;
+}
+
+header nav .logo img {
+  height: 2.8rem;
+}
+
+header nav .logo a:focus {
+  outline: 1px solid currentColor;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-list .nav-list-item {
+  margin: 0 1em;
+  font-size: 1.1rem;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.nav-list .nav-list-item::before {
+  content: "";
+  background: #fff;
+  opacity: 0.1;
+  display: block;
+  position: absolute;
+  height: 4rem;
+  width: 0.1em;
+  border-radius: 50%;
+  -webkit-transform: translate(-0.5em, -40%);
+          transform: translate(-0.5em, -40%);
+}
+
+.nav-list .nav-list-item::after {
+  content: "";
+  height: 0.12em;
+  width: 110%;
+  background: #fff;
+  position: absolute;
+  bottom: -1.33333rem;
+  left: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+.nav-list .nav-list-item:hover a {
+  color: #fff;
+}
+
+.nav-list .nav-list-item:hover::before {
+  opacity: 0.2;
+}
+
+.nav-list .nav-list-item:hover::after {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.nav-list a:focus {
+  outline-offset: 0.3em;
+  outline: 0.1em solid currentColor;
+}
+
+:root {
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  color: #d3faf5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #001405;
+}
+/*# sourceMappingURL=style.css.map */

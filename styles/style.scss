@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Patrick+Hand&family=Press+Start+2P&family=Varela+Round&display=swap');
+
+@import "./header";
+@import "./variables";
+
+:root{
+  font-size: 16px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  box-sizing: border-box;
+}
+
+body{
+  background: $bg-color;
+}

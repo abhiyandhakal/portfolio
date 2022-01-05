@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Abhiyan Dhakal | Portfolio</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="icon" href="../images/favicon.png">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="../index.html"><img src="../images/logo.png" alt=""></a></div>
+
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="toggler">
+          <div class="hamburger"></div>
+        </label>
+
+      <ul class="nav-list">        
+        <li class="nav-list-item"><a href="../index.html">Home</a></li>
+        <li class="nav-list-item"><a href="about.html">About</a></li>
+        <li class="nav-list-item"><a href="skills.html">My Skills</a></li>
+        <li class="nav-list-item"><a href="projects.html">Projects</a></li>
+        <li class="nav-list-item"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="heading" id="contact"><h1>Contact Me</h1></div>
+
+    <div class="description">
+      <p>If you wish to contact me, please fill out this form and click on submit button. Your personal details will not be shared with anyone else.</p>
+    </div>
+
+    <form class="contactForm" action="https://formsubmit.co/abheeyaandhacaal@gmail.com" method="post">
+      <div class="first-name">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" placeholder="Enter your first name here." name="first-name" required>
+      </div>
+
+      <div class="middle-name">
+        <label for="middle-name">Middle Name: (optional)</label>
+        <input type="text" id="middle-name" name="middle-name" placeholder="Enter your middle name here.(if any)">
+      </div>
+
+      <div class="last-name">
+        <label for="last-name">Last Name: </label>
+        <input type="text" id="last-name" name="last-name" placeholder="Enter your last name here." required>
+      </div>
+
+      <div class="email">
+        <label for="email">Email Address: </label>
+        <input type="email" name="email" id="email" placeholder="Enter your email... someone@example.com" required>
+      </div>
+
+      <div class="form-subtitle">Your name and email will never be shared with anyone else.</div>
+
+      <textarea name="mail-body" id="mail-body" placeholder="Write your mail here." required></textarea>
+
+      <input type="hidden" name="_next" value="https://abhiyandhakal.com/thanks.html">
+      <input type="hidden" name="_subject" value="New submission!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="submit">
+        <button class="btn">Submit</button>
+      </div>
+    </form>
+  </main>
+  
+  <footer>
+    <p>Copyright &copy; 2022 - Abhiyan Dhakal</p>
+  </footer>
+</body>
+</html>
