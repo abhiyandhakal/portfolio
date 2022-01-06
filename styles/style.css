@@ -33,7 +33,6 @@ header nav .logo a:focus {
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
-  background: rgba(100, 70, 68, 0.9);
 }
 
 .nav-list .nav-list-item {
@@ -102,10 +101,6 @@ header nav .logo a:focus {
   outline: 0.1em solid currentColor;
 }
 
-#toggler {
-  display: none;
-}
-
 .toggler {
   width: 2rem;
   height: 4rem;
@@ -124,14 +119,14 @@ header nav .logo a:focus {
           transform: translate(-50%, -50%);
   border-radius: 35%;
   background-color: #fff;
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .toggler .hamburger::before {
-  content: '';
+  content: "";
   height: 0.1em;
   width: 100%;
   background-color: #fff;
@@ -140,12 +135,12 @@ header nav .logo a:focus {
   border-radius: 35%;
   top: -0.5em;
   opacity: 1;
-  -webkit-transition: opacity .1s .1s;
-  transition: opacity .1s .1s;
+  -webkit-transition: opacity 0.1s 0.1s;
+  transition: opacity 0.1s 0.1s;
 }
 
 .toggler .hamburger::after {
-  content: '';
+  content: "";
   height: 0.1em;
   width: 100%;
   border-radius: 35%;
@@ -153,10 +148,10 @@ header nav .logo a:focus {
   display: block;
   position: absolute;
   bottom: -0.5em;
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 @media (max-width: 50rem) {
@@ -171,47 +166,37 @@ header nav .logo a:focus {
             flex-direction: column;
     position: absolute;
     top: 100%;
+    background: rgba(100, 70, 68, 0.9);
     width: 100%;
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
     -webkit-transform-origin: top;
             transform-origin: top;
-    -webkit-transition: -webkit-transform .4s ease-in-out;
-    transition: -webkit-transform .4s ease-in-out;
-    transition: transform .4s ease-in-out;
-    transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
   .nav-list .nav-list-item {
     margin: 1.3rem;
     opacity: 0;
-    -webkit-transition: opacity .2s ease-out;
-    transition: opacity .2s ease-out;
+    -webkit-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
   }
   .toggler {
     display: block;
     margin: 0 1rem;
   }
-  #toggler:checked + .toggler .hamburger {
-    -webkit-transform: rotate(45deg) translate(-50%, -50%);
-            transform: rotate(45deg) translate(-50%, -50%);
+  #toggler-animation {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
-  #toggler:checked + .toggler .hamburger::before {
+  #toggler-animation::before {
     opacity: 0;
-    -webkit-transition: opacity .1s;
-    transition: opacity .1s;
   }
-  #toggler:checked + .toggler .hamburger::after {
-    -webkit-transform: rotate(-90deg) translate(25%);
-            transform: rotate(-90deg) translate(25%);
-  }
-  #toggler:checked ~ .nav-list {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-  }
-  #toggler:checked ~ .nav-list .nav-list-item {
-    opacity: 1;
-    -webkit-transition: opacity .5s ease-out .3s;
-    transition: opacity .5s ease-out .3s;
+  #toggler-animation::after {
+    -webkit-transform: rotate(90deg) translate(-25%);
+            transform: rotate(90deg) translate(-25%);
   }
 }
 
