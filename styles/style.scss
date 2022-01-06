@@ -36,3 +36,9 @@ p{
   font-size: larger;
   color: rgb(12, 121, 158);
 }
+
+@media (max-width: 300px) {
+  :root{
+    font-size: 12px;
+  }
+}

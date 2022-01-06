@@ -272,7 +272,7 @@ main {
           align-items: center;
 }
 
-.reverse-flex-container {
+.flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -284,6 +284,19 @@ main {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100%;
+}
+
+.my-image img {
+  width: 25rem;
+}
+
+@media (max-width: 25rem) {
+  .my-image {
+    margin: 1rem;
+  }
+  .my-image img {
+    width: 100%;
+  }
 }
 
 #text-container-index {
@@ -314,6 +327,21 @@ main {
   max-width: 65ch;
 }
 
+@media (max-width: 50rem) {
+  .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #text-container-index {
+    width: unset;
+  }
+}
+
 h1 {
   font-size: clamp(3rem, 6vw, 10rem);
   text-transform: capitalize;
@@ -329,6 +357,12 @@ h1 {
 h1:hover {
   color: rgba(61, 211, 136, 0.7);
   letter-spacing: .1em;
+}
+
+@media (max-width: 40rem) {
+  h1:hover {
+    letter-spacing: unset;
+  }
 }
 
 .btns {
@@ -375,9 +409,24 @@ footer {
           align-items: center;
 }
 
-input, textarea {
+form {
   font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+input, textarea {
   width: 100%;
+  font-size: 1.2rem;
   margin-bottom: 1em;
   color: #001405;
   padding: .5em;
@@ -396,8 +445,26 @@ input:focus, textarea:focus {
           box-shadow: 0 0 0 .2em pink;
 }
 
+.form-subtitle {
+  color: rgba(211, 250, 245, 0.5);
+}
+
 textarea {
   min-height: 10em;
+}
+
+.submit {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#submit {
+  margin-right: 0;
 }
 
 :root {
@@ -427,5 +494,11 @@ p {
 .large-text {
   font-size: larger;
   color: #0c799e;
+}
+
+@media (max-width: 300px) {
+  :root {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

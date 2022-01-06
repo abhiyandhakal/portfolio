@@ -13,3 +13,9 @@ h1{
     letter-spacing: .1em;
   }
 }
+
+@media (max-width: 40rem) {
+  h1:hover{
+    letter-spacing: unset;
+  }
+}

@@ -1,6 +1,16 @@
-input, textarea{
+form{
   font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea{
   width: 100%;
+  font-size: 1.2rem;
   margin-bottom: 1em;
   color: $bg-color;
   padding: .5em;
@@ -17,6 +27,20 @@ input, textarea{
   }
 }
 
+.form-subtitle{
+  color: rgba($color: $text-color, $alpha: .5);
+}
+
 textarea{
   min-height: 10em;
+}
+
+.submit{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#submit{
+  margin-right: 0;
 }
