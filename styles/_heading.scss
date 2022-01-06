@@ -1,0 +1,15 @@
+$heading-color: #3dd388;
+
+h1{
+  font-size: clamp(3rem, 6vw, 10rem);
+  text-transform: capitalize;
+  width: fit-content;
+  color: $heading-color;
+  transition: $heading-transition;
+  padding-top: 1rem;
+  
+  &:hover{
+    color: rgba($color: $heading-color, $alpha: .7);
+    letter-spacing: .1em;
+  }
+}

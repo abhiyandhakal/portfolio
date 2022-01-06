@@ -1,0 +1,22 @@
+input, textarea{
+  font-size: 1.2rem;
+  width: 100%;
+  margin-bottom: 1em;
+  color: $bg-color;
+  padding: .5em;
+  background-color: green;
+  transition: all .1s ease-in;
+
+  &:hover{
+    background-color: rgb(200, 53, 53);
+  }
+
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 0 .2em pink;
+  }
+}
+
+textarea{
+  min-height: 10em;
+}

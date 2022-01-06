@@ -1,0 +1,44 @@
+$info-bg: #001;
+$heading-transition: all .2s ease-in-out;
+$text-shadow: .1em 0 .05em #444;
+
+.info{
+  background: $info-bg;
+  padding: 1rem 0 1rem 1rem;
+  box-shadow: 0 0 1rem $info-bg;
+  width: 100%;
+}
+
+#hi, #about-me{
+  font-family: 'Patrick Hand', cursive;
+  font-size: 4rem;
+  font-size: clamp(2rem, 5.5vw, 10vw);
+
+  &:hover{
+    color: red;
+    
+    span{
+      color: #aaa;  
+    }
+  }
+}
+
+#name{
+  font-family: 'Bangers', cursive;
+  font-size: 10rem;
+  font-size: clamp(5rem, 20vw, 25vw);
+
+  &:hover{
+    color: #aaa;
+  }
+}
+
+#hi, #name, #about-me{
+  transition: $heading-transition;
+  width: fit-content;
+
+  &:hover{
+    letter-spacing: .05em;
+    text-shadow: $text-shadow;
+  }
+}

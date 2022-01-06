@@ -1,16 +1,23 @@
 $header-footer-bg: rgba(100, 70, 68, 0.9);
 $text-color: #fff;
 $nav-height: 4rem;
+$header-footer-font-size: 1.1rem;
 
 $nav-list-item-pseudo-breadth: 0.1em;
 
+header{
+  position: fixed;
+  height: fit-content;
+  width: 100%;
+  background: $header-footer-bg;
+}
+
 header nav {
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px $header-footer-bg;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $nav-height;
-  background: $header-footer-bg;
   position: relative;
 
   .logo {
@@ -32,7 +39,7 @@ header nav {
 
   .nav-list-item {
     margin: 0 1em;
-    font-size: 1.1rem;
+    font-size: $header-footer-font-size;
     position: relative;
     width: fit-content;
 
@@ -134,7 +141,7 @@ header nav {
 }
 
 @media (max-width: 50rem) {
-  nav {
+  header nav {
     box-shadow: unset;
   }
 
@@ -159,6 +166,7 @@ header nav {
   .toggler {
     display: block;
     margin: 0 1rem;
+    transition: transform .5s;
   }
 
   #toggler-animation{
