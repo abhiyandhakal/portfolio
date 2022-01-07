@@ -1,21 +1,32 @@
-$heading-color: #3dd388;
+$h1-color: #3dd388;
+$h2-color: #0f0;
 
-h1{
+h1, h2{
   font-size: clamp(3rem, 6vw, 10rem);
   text-transform: capitalize;
   width: fit-content;
-  color: $heading-color;
+  color: $h1-color;
   transition: $heading-transition;
   padding-top: 1rem;
   
   &:hover{
-    color: rgba($color: $heading-color, $alpha: .7);
+    color: rgba($color: $h1-color, $alpha: .7);
     letter-spacing: .1em;
   }
 }
 
 @media (max-width: 40rem) {
   h1:hover{
+    letter-spacing: unset;
+  }
+}
+
+h2{
+  transform: scale(.5);
+  color: $h2-color;
+
+  &:hover{
+    color: rgba($color: $h2-color, $alpha: .7);
     letter-spacing: unset;
   }
 }
