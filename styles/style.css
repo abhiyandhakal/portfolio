@@ -492,6 +492,13 @@ textarea {
   padding: 1rem;
 }
 
+@media (max-width: 44rem) {
+  .grid-container {
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+  }
+}
+
 .iframe-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -516,6 +523,7 @@ textarea {
 iframe {
   min-height: 25rem;
   width: 100%;
+  border: 1px solid #d3faf5;
 }
 
 :root {
