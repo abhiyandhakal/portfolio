@@ -1,0 +1,24 @@
+.hover-animate {
+	&::after {
+		content: "";
+		height: 2px;
+		width: 100%;
+		background: currentColor;
+		display: block;
+		border-radius: 100vw;
+		transform: scale(0, 1);
+		transition: all 0.15s;
+	}
+
+	&:hover::after {
+		transform: scale(1, 1);
+	}
+
+	&:focus {
+		outline: none;
+
+		&::after {
+			transform: scale(1, 1);
+		}
+	}
+}

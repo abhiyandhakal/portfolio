@@ -1,0 +1,19 @@
+:root {
+	// --bg-primary: #223;
+	--bg-primary: radial-gradient(circle at center, #446, #112);
+	--bg-secondary: #14142588;
+
+	--text-primary: #ddd;
+	--text-secondary: #0d0;
+
+	--max-width: 96rem;
+
+	--nav-height: 4.5rem;
+
+	--gap-1: clamp(1rem, 3vw, 5rem);
+
+	--shadow-1: 0 0 1rem #0008;
+
+	--transition-1: all 0.3s;
+	--transition-2: all 0.1s;
+}
