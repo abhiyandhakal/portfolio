@@ -1,35 +1,6 @@
 <script lang="ts">
 	import "iconify-icon";
-
-	const navItems: {
-		id: number;
-		href: string;
-		text: string;
-		target?: string;
-		icon: {
-			icon: string;
-			color?: string;
-		};
-	}[] = [
-		{ id: 0, href: "/", text: "Home", icon: { icon: "bxs:home" } },
-		{
-			id: 1,
-			href: "/about",
-			text: "About Me",
-			icon: { icon: "mdi:about", color: "skyblue" }
-		},
-		{ id: 2, href: "/projects", text: "Projects", icon: { icon: "fluent:folder-48-filled" } },
-		{
-			id: 3,
-			href: "https://github.com/abhiyandhakal/portfolio",
-			text: "Contribute",
-			target: "_blank",
-			icon: {
-				icon: "mdi:github",
-				color: "var(--text-primary)"
-			}
-		}
-	];
+	import { navItems } from "../data";
 
 	let active = <number>0;
 
@@ -74,7 +45,7 @@
 	$blur: 10px;
 	nav {
 		position: relative;
-		background: var(--bg-secondary);
+		background: var(--bg-header-footer);
 		height: var(--nav-height);
 		display: grid;
 		place-items: center;
@@ -114,7 +85,7 @@
 			ul {
 				position: absolute;
 				top: 100%;
-				background: var(--bg-secondary);
+				background: var(--bg-header-footer);
 				margin: 0;
 				left: 0;
 				width: 100%;

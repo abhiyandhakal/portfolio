@@ -1,0 +1,23 @@
+.textbox {
+	background: var(--bg-textbox);
+	padding-inline: var(--gap-small);
+	padding-block: calc(var(--gap-small) / 2);
+	color: var(--text-primary);
+	border: none;
+	border-radius: var(--radius-1);
+	font-size: var(--fz-lg);
+
+	&:hover {
+		filter: invert(10%);
+	}
+
+	&::placeholder {
+		color: var(--text-primary);
+		opacity: 0.4;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: var(--shadow-2);
+	}
+}

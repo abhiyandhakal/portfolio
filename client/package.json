@@ -31,6 +31,7 @@
 	"type": "module",
 	"dependencies": {
 		"iconify-icon": "^1.0.7",
-		"sass": "^1.63.3"
+		"sass": "^1.63.3",
+		"uuid": "^9.0.0"
 	}
 }

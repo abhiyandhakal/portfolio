@@ -1,0 +1,20 @@
+.btn {
+	background: var(--bg-btn);
+	padding: calc(var(--gap-small) / 1.5) calc(var(--gap-small) * 2);
+	font-size: var(--fz-lg);
+	border-radius: var(--radius-1);
+	color: var(--text-dark);
+	border: none;
+	cursor: pointer;
+	transition: var(--transition-2);
+
+	&:focus {
+		outline: 2px solid var(--bg-btn);
+		outline-offset: 1px;
+		filter: invert(10%);
+	}
+
+	&:hover {
+		opacity: 0.75;
+	}
+}

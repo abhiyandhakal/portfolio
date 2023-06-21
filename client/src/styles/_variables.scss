@@ -1,19 +1,38 @@
 :root {
 	// --bg-primary: #223;
 	--bg-primary: radial-gradient(circle at center, #446, #112);
-	--bg-secondary: #1818259;
+	--bg-secondary: rgb(12 74 110);
+	--bg-header-footer: #0f172aaa;
+	// --bg-header-footer: var(--bg-secondary);
+
+	--bg-textbox: #1e293b;
+	--bg-btn: #0ea5d9;
 
 	--text-primary: #ddd;
-	--text-secondary: #0d0;
+	--text-secondary: #0d7;
+
+	--text-dark: #000;
 
 	--max-width: 96rem;
 
 	--nav-height: 4.5rem;
 
 	--gap-1: clamp(1rem, 3vw, 5rem);
+	--gap-small: 0.7rem;
+	--gap-lg: 1.4rem;
 
 	--shadow-1: 0 0 1rem #0008;
+	--shadow-2: 0 0 1rem #fff3;
 
 	--transition-1: all 0.3s;
 	--transition-2: all 0.1s;
+
+	--radius-1: 0.3em;
+
+	--fz-regular: 1rem;
+	--fz-sm: 0.8rem;
+	--fz-lg: 1.1rem;
+	--fz-xl: 1.2rem;
+	--fz-2xl: 1.5rem;
+	--fz-3xl: 2rem;
 }

@@ -9,4 +9,20 @@ declare global {
 	}
 }
 
-export { };
+interface Icon {
+	icon: string;
+	color?: string;
+}
+
+interface Social {
+	id: number;
+	href: string;
+	text: string;
+	icon: Icon;
+}
+
+interface NavItem extends Social {
+	target?: string;
+}
+
+export { Icon, Social, NavItem };
