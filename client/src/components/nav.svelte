@@ -1,8 +1,34 @@
 <script lang="ts">
-	const navItems: { id: number; href: string; text: string }[] = [
-		{ id: 0, href: "/", text: "Home" },
-		{ id: 1, href: "/about", text: "About" },
-		{ id: 2, href: "/projects", text: "Projects" }
+	import "iconify-icon";
+
+	const navItems: {
+		id: number;
+		href: string;
+		text: string;
+		target?: string;
+		icon: {
+			icon: string;
+			color?: string;
+		};
+	}[] = [
+		{ id: 0, href: "/", text: "Home", icon: { icon: "bxs:home" } },
+		{
+			id: 1,
+			href: "/about",
+			text: "About Me",
+			icon: { icon: "mdi:about", color: "skyblue" }
+		},
+		{ id: 2, href: "/projects", text: "Projects", icon: { icon: "fluent:folder-48-filled" } },
+		{
+			id: 3,
+			href: "https://github.com/abhiyandhakal/portfolio",
+			text: "Contribute",
+			target: "_blank",
+			icon: {
+				icon: "mdi:github",
+				color: "var(--text-primary)"
+			}
+		}
 	];
 
 	let active = <number>0;
@@ -30,9 +56,14 @@
 
 		<!-- nav items -->
 		<ul class={hamburgerClicked ? "show" : ""} role="navigation">
-			{#each navItems as { id, href, text } (id)}
+			{#each navItems as { id, href, text, target, icon } (id)}
 				<li class="nav-item">
-					<a class={`hover-animate ${id === active ? "active" : null}`} {href}>{text}</a>
+					<span class="link-container">
+						<iconify-icon style={icon.color ? `color: ${icon.color};` : ""} icon={icon.icon} />
+						<a class={`hover-animate ${id === active ? "active" : null}`} {href} {target}>
+							{text}
+						</a>
+					</span>
 				</li>
 			{/each}
 		</ul>
@@ -101,6 +132,15 @@
 		}
 	}
 
+	.link-container {
+		display: flex;
+		align-items: center;
+		gap: 0.3em;
+
+		iconify-icon {
+			font-size: 1.2em;
+		}
+	}
 	a {
 		color: var(--text-primary);
 		text-decoration: none;

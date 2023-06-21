@@ -1,22 +1,25 @@
 <script lang="ts">
 	import Nav from "../components/nav.svelte";
+	import Footer from "../components/footer.svelte";
 </script>
 
 <header>
 	<Nav />
-
-	<div class="container">
-		<div class="intro">
-			Hi, I'm Abhiyan
-			<div>Dhakal</div>
-		</div>
-
-		<img src="/abhiyan.png" alt="Abhiyan" />
-	</div>
 </header>
 
+<main>
+	<div class="intro">
+		Hi, I'm Abhiyan
+		<div>Dhakal</div>
+	</div>
+
+	<img src="/abhiyan.webp" alt="Abhiyan" />
+</main>
+
+<Footer />
+
 <style lang="scss">
-	.container {
+	main {
 		display: flex;
 		justify-content: space-between;
 
@@ -25,6 +28,14 @@
 		margin: 0 auto;
 		padding: var(--gap-1);
 		padding-block-end: 0;
+
+		@media (max-width: 50rem) {
+			flex-direction: column;
+
+			img {
+				height: 75%;
+			}
+		}
 	}
 
 	img {
