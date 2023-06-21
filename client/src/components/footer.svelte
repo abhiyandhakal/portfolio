@@ -32,7 +32,7 @@
 			<ul>
 				{#each social as { id, href, icon } (id)}
 					<li>
-						<a {href}>
+						<a {href} target="_blank">
 							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color};` : ""} />
 						</a>
 					</li>
@@ -44,17 +44,27 @@
 
 		<form class="contact-form" on:submit={handleContactForm}>
 			<h2>Contact Me</h2>
+
+			<label for="name">Name</label>
+			<input type="name" class="textbox" placeholder="Your Name" id="name" required />
+
 			<label for="email">Email</label>
-			<input type="email" class="textbox" placeholder="your@example.com" id="email" />
+			<input type="email" class="textbox" placeholder="your@example.com" id="email" required />
 
 			<label for="content">Content</label>
-			<textarea class="textbox" name="content" id="content" placeholder="Write your body here" />
+			<textarea
+				class="textbox"
+				name="content"
+				id="content"
+				placeholder="Write your body here"
+				required
+			/>
 
 			<button class="btn" type="submit">Send</button>
 		</form>
 
 		<section class="copyright">
-			<p>Copyright (c) 2023 <b>Abhiyan Dhakal</b>. All rights reserved.</p>
+			<p>Copyright (c) 2023 <span>Abhiyan Dhakal</span>. All rights reserved.</p>
 		</section>
 	</div>
 </footer>
@@ -100,7 +110,7 @@
 				justify-items: center;
 			}
 
-			& > section {
+			& > * {
 				position: relative;
 
 				&::after {
@@ -111,6 +121,23 @@
 					background: var(--bg-primary);
 					border-radius: 100%;
 					right: 0;
+
+					@media (max-width: $screen) {
+						height: 2px;
+						width: 100%;
+						bottom: 0;
+						content: unset;
+					}
+				}
+
+				&:first-child::before {
+					content: "";
+					position: absolute;
+					height: 100%;
+					width: 2px;
+					background: var(--bg-primary);
+					border-radius: 100%;
+					left: 0;
 
 					@media (max-width: $screen) {
 						height: 2px;
@@ -147,9 +174,19 @@
 		ul {
 			display: flex;
 			justify-content: center;
-			gap: var(--gap-small);
 			width: fit-content;
 			font-size: var(--fz-2xl);
+
+			a {
+				padding: var(--gap-small);
+				display: block;
+				transition: var(--transition-1);
+
+				&:hover {
+					background: var(--bg-secondary);
+					border-radius: var(--radius-1);
+				}
+			}
 		}
 	}
 
@@ -196,8 +233,7 @@
 		grid-template-columns: 0.5fr 1.5fr;
 		align-items: center;
 		gap: var(--gap-small);
-		position: relative;
-		padding-left: var(--gap-lg);
+		padding-inline: var(--gap-lg);
 
 		& > :first-child {
 			grid-column: 1 / -1;
@@ -225,6 +261,11 @@
 		p {
 			text-align: center;
 			padding-block-start: var(--gap-small);
+
+			span {
+				color: var(--text-primary);
+				font-weight: 700;
+			}
 		}
 
 		&::before {

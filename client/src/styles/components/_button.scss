@@ -17,4 +17,9 @@
 	&:hover {
 		opacity: 0.75;
 	}
+
+	&:active {
+		background: var(--bg-secondary);
+		color: var(--text-primary);
+	}
 }

@@ -22,7 +22,7 @@ interface Social {
 }
 
 interface NavItem extends Social {
-	target?: string;
+	target?: "_self" | "_blank" | "_parent" | "_top";
 }
 
 export { Icon, Social, NavItem };
