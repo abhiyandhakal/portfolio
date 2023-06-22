@@ -1,5 +1,6 @@
 .btn {
 	background: var(--bg-btn);
+	text-decoration: none;
 	padding: calc(var(--gap-small) / 1.5) calc(var(--gap-small) * 2);
 	font-size: var(--fz-lg);
 	border-radius: var(--radius-1);
@@ -7,6 +8,7 @@
 	border: none;
 	cursor: pointer;
 	transition: var(--transition-2);
+	outline: 1px solid var(--bg-btn);
 
 	&:focus {
 		outline: 2px solid var(--bg-btn);
@@ -15,11 +17,23 @@
 	}
 
 	&:hover {
-		opacity: 0.75;
+		background: transparent;
+		color: var(--text-primary);
 	}
 
 	&:active {
 		background: var(--bg-secondary);
 		color: var(--text-primary);
+	}
+}
+
+.btn-invert {
+	background: transparent;
+	color: var(--text-primary);
+	border: 1px solid var(--bg-btn);
+
+	&:hover {
+		background: var(--bg-btn);
+		color: var(--text-dark);
 	}
 }

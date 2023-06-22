@@ -14,15 +14,18 @@ interface Icon {
 	color?: string;
 }
 
-interface Social {
-	id: number;
+interface TechIcon {
+	id: number | string;
 	href: string;
-	text: string;
 	icon: Icon;
+}
+
+interface Social extends TechIcon {
+	text: string;
 }
 
 interface NavItem extends Social {
 	target?: "_self" | "_blank" | "_parent" | "_top";
 }
 
-export { Icon, Social, NavItem };
+export { Icon, Social, NavItem, TechIcon };

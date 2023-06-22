@@ -5,7 +5,7 @@
 	let active = <number>0;
 
 	if (typeof window !== "undefined") {
-		active = navItems.find(({ href }) => href === window.location.pathname)?.id ?? 0;
+		active = (navItems.find(({ href }) => href === window.location.pathname)?.id as number) ?? 0;
 	}
 
 	// hamburger
@@ -95,6 +95,8 @@
 				transition: var(--transition-2);
 				transform-origin: top;
 				padding-block: var(--gap-1);
+
+				align-items: unset !important;
 
 				&.show {
 					scale: 1 1;

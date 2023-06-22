@@ -4,6 +4,10 @@
 
 :root {
 	font-size: 1rem;
+
+	@media (max-width: 30rem) {
+		font-size: 0.8rem;
+	}
 }
 
 body {
