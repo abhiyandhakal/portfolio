@@ -182,11 +182,53 @@
 	</section>
 </header>
 
-<main />
+<main>
+	<!-- about -->
+	<section aria-labelledby="about-me">
+		<div class="container">
+			<h2 id="about-me">About Me</h2>
+			<img src="/person.webp" alt="person" />
+			<div>
+				Hey there <iconify-icon icon="noto:waving-hand" />! I'm <b>Abhiyan Dhakal</b>, a tech
+				eithusiast with a diverse skillset as listed below.
+				<dl>
+					<dt>Full Stack Web Developer:</dt>
+					<dd>
+						I excel in both front-end technologies (React, Svelte) and back-end technologies
+						(Express), crafting visually appealing web interfaces with robust functionality.
+					</dd>
+					<dt>TUI Application Dev:</dt>
+					<dd>
+						I enjoy building powerful and efficient Text User Interface applications, providing
+						seamless user interactions.
+					</dd>
+					<dt>Linux Enthusiast:</dt>
+					<dd>
+						My love for Linux drives me to explore and optimize its open-source environment
+						actively.
+					</dd>
+					<dt>Desktop App Developer:</dt>
+					<dd>
+						I have a knack for creating intuitive and feature-rich desktop applications with ,
+						embracing diverse technologies and platforms. With this versatile skill set, I'm eager
+						to take on new challenges and contribute to innovative projects. Let's collaborate and
+						create something exceptional together!
+					</dd>
+				</dl>
+			</div>
+
+			<a class="read-more" href="/about">Read More >></a>
+		</div>
+	</section>
+</main>
 
 <Footer />
 
 <style lang="scss">
+	header {
+		background: var(--bg-primary);
+	}
+
 	.hero {
 		display: flex;
 		justify-content: space-between;
@@ -310,6 +352,83 @@
 
 		100% {
 			transform: translateY(1rem);
+		}
+	}
+
+	b {
+		color: var(--text-secondary);
+	}
+
+	// main
+	main {
+		section {
+			background: var(--bg-secondary);
+
+			&:nth-child(2n) {
+				background: var(--bg-primary);
+			}
+		}
+
+		[aria-labelledby="about-me"] {
+			padding: var(--gap-lg);
+
+			.container {
+				padding: var(--gap-lg);
+				border-radius: var(--radius-xl);
+				background: var(--bg-primary);
+				display: grid;
+				max-width: var(--max-width);
+				margin-inline: auto;
+				grid-template-columns: 0.5fr 1fr;
+				font-size: var(--fz-lg);
+				place-items: center;
+				place-content: center;
+				gap: var(--gap-lg);
+				position: relative;
+				padding-bottom: calc(var(--gap-lg) * 2);
+
+				@media (max-width: 1000px) {
+					grid-template-columns: 1fr;
+
+					img {
+						display: none;
+					}
+				}
+
+				h2 {
+					text-align: center;
+					grid-column: 1/-1;
+				}
+
+				img {
+					height: 100%;
+					border-radius: var(--radius-xl);
+					object-fit: cover;
+					object-position: center;
+				}
+
+				dl {
+					margin-block: var(--gap-small);
+
+					dt {
+						color: var(--text-secondary);
+						font-weight: 600;
+						margin-block: var(--gap-small);
+					}
+
+					dd {
+						margin-inline: var(--gap-small);
+					}
+				}
+			}
+
+			.read-more {
+				position: absolute;
+				bottom: var(--gap-lg);
+				left: 50%;
+				transform: translateX(-50%);
+				color: var(--text-secondary);
+			}
 		}
 	}
 </style>

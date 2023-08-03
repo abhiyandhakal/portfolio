@@ -1,9 +1,8 @@
 :root {
 	// --bg-primary: #223;
 	--bg-primary: radial-gradient(circle at center, #446, #112);
-	--bg-secondary: rgb(12 74 110);
+	--bg-secondary: rgb(90, 61, 103);
 	--bg-header-footer: #0f172aaa;
-	// --bg-header-footer: var(--bg-secondary);
 
 	--bg-textbox: #1e293b;
 	--bg-btn: #0ea5d9;
@@ -28,6 +27,7 @@
 	--transition-2: all 0.1s;
 
 	--radius-1: 0.3em;
+	--radius-xl: 1em;
 
 	--fz-regular: 1rem;
 	--fz-sm: 0.8rem;
