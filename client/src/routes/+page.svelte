@@ -6,7 +6,7 @@
 	import type { TechIcon } from "../app.d";
 	import { v4 } from "uuid";
 
-	let techList: TechIcon[] = [
+	const techList: TechIcon[] = [
 		{
 			id: v4(),
 			href: "https://react.dev/",
@@ -147,7 +147,7 @@
 				<h2>I am <span>{getArticle(phrase)} {typingText}</span>.</h2>
 			</div>
 
-			<ul class="techs">
+			<ul class="tech-list">
 				{#each techList as tech (tech.id)}
 					<li>
 						<a target="_blank" href={tech.href}>
@@ -186,7 +186,7 @@
 	<!-- about -->
 	<section aria-labelledby="about-me">
 		<div class="container">
-			<h2 id="about-me">About Me</h2>
+			<h2 class="h2" id="about-me">About Me</h2>
 			<img src="/person.webp" alt="person" />
 			<div>
 				Hey there <iconify-icon icon="noto:waving-hand" />! I'm <b>Abhiyan Dhakal</b>, a tech
@@ -274,8 +274,6 @@
 	}
 
 	h2 {
-		font-size: var(--fz-3xl);
-		font-weight: 400;
 		margin-bottom: var(--gap-small);
 
 		@media (max-width: 36rem) {
@@ -303,26 +301,6 @@
 		gap: var(--gap-lg);
 
 		padding-block: var(--gap-1);
-	}
-
-	.techs {
-		display: flex;
-		font-size: 3rem;
-
-		list-style: none;
-		padding: 0;
-		margin: 0;
-
-		li {
-			display: block;
-			padding: calc(var(--gap-lg) / 2);
-
-			&:hover {
-				background-color: var(--bg-secondary);
-				border-radius: var(--radius-1);
-				opacity: 0.8;
-			}
-		}
 	}
 
 	.scroll-down {
@@ -374,7 +352,6 @@
 			.container {
 				padding: var(--gap-lg);
 				border-radius: var(--radius-xl);
-				background: var(--bg-primary);
 				display: grid;
 				max-width: var(--max-width);
 				margin-inline: auto;
@@ -426,7 +403,7 @@
 				bottom: var(--gap-lg);
 				left: 50%;
 				transform: translateX(-50%);
-				color: var(--text-secondary);
+				color: var(--text-link);
 			}
 		}
 	}
