@@ -208,13 +208,11 @@
 						actively.
 					</dd>
 					<dt>Desktop App Developer:</dt>
-					<dd>
-						I have a knack for creating intuitive and feature-rich desktop applications with ,
-						embracing diverse technologies and platforms. With this versatile skill set, I'm eager
-						to take on new challenges and contribute to innovative projects. Let's collaborate and
-						create something exceptional together!
-					</dd>
+					<dd>I have a knack for creating intuitive and feature-rich desktop applications.</dd>
 				</dl>
+
+				With this versatile skill set, I'm eager to take on new challenges and contribute to
+				innovative projects. Let's collaborate and create something exceptional together!
 			</div>
 
 			<a class="read-more" href="/about">Read More >></a>
@@ -238,6 +236,7 @@
 		margin: 0 auto;
 		padding: var(--gap-1);
 		padding-block-end: 0;
+		min-height: 40rem;
 
 		@media (max-width: 50rem) {
 			flex-direction: column;
