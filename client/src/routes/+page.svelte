@@ -173,11 +173,7 @@
 				<a href="/contact" class="btn btn-invert">Let's Chat</a>
 			</div>
 
-			<button
-				class="scroll-down btn btn-invert glow-effect"
-				on:click={scroll}
-				data-glow-offset="true"
-			>
+			<button class="scroll-down btn-invert glow-effect" on:click={scroll} data-glow-offset="true">
 				<iconify-icon icon="pajamas:scroll-down" />
 				<svg class="glow-container">
 					<rect rx="10000" pathLength="100" stroke-linecap="round" class="glow-blur" />
@@ -319,6 +315,7 @@
 		display: none;
 		bottom: var(--gap-1);
 		border-radius: 50%;
+		padding: var(--gap-lg);
 
 		font-size: 4rem;
 		padding-top: var(--gap-small);
