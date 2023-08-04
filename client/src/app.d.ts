@@ -16,6 +16,7 @@ interface Icon {
 
 interface TechIcon {
 	id: number | string;
+	name: string;
 	href: string;
 	icon: Icon;
 }

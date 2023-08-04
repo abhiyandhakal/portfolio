@@ -9,6 +9,7 @@
 	const frontEndIcons: TechIcon[] = [
 		{
 			id: v4(),
+			name: "HTML",
 			href: "https://www.w3.org/html/",
 			icon: {
 				icon: "vscode-icons:file-type-html"
@@ -16,6 +17,7 @@
 		},
 		{
 			id: v4(),
+			name: "CSS",
 			href: "https://www.w3.org/Style/CSS/",
 			icon: {
 				icon: "vscode-icons:file-type-css"
@@ -23,6 +25,7 @@
 		},
 		{
 			id: v4(),
+			name: "SCSS",
 			href: "https://sass-lang.com/",
 			icon: {
 				icon: "vscode-icons:file-type-scss"
@@ -30,6 +33,15 @@
 		},
 		{
 			id: v4(),
+			name: "Tailwind CSS",
+			href: "https://tailwindcss.com/",
+			icon: {
+				icon: "skill-icons:tailwindcss-light"
+			}
+		},
+		{
+			id: v4(),
+			name: "JavaScript",
 			href: "https://www.javascript.com/",
 			icon: {
 				icon: "logos:javascript"
@@ -37,6 +49,7 @@
 		},
 		{
 			id: v4(),
+			name: "TypeScript",
 			href: "https://www.typescriptlang.org/",
 			icon: {
 				icon: "logos:typescript-icon"
@@ -44,6 +57,7 @@
 		},
 		{
 			id: v4(),
+			name: "React JS",
 			href: "https://react.dev/",
 			icon: {
 				icon: "logos:react"
@@ -51,6 +65,7 @@
 		},
 		{
 			id: v4(),
+			name: "Svelte",
 			href: "https://svelte.dev/",
 			icon: {
 				icon: "skill-icons:svelte"
@@ -58,6 +73,7 @@
 		},
 		{
 			id: v4(),
+			name: "Next JS",
 			href: "https://nextjs.org/",
 			icon: {
 				icon: "teenyicons:nextjs-outline",
@@ -79,18 +95,19 @@
 	pursuing Computer Engineering, currently in 4<sup>th</sup> semester.
 	<section aria-labelledby="full-stack">
 		<h2 class="h2" id="full-stack">Full Stack Web Developer:</h2>
-		<div>
-			<p>
-				I excel in both <b>front-end</b> and <b>back-end</b> technologies, crafting visually appealing
-				web interfaces with robust functionality.
-			</p>
-			<br />
+		<p>
+			I excel in both <b>front-end</b> and <b>back-end</b> technologies, crafting visually appealing
+			web interfaces with robust functionality.
+		</p>
+		<br />
+		<div class="container">
 			<p class="center-text">Here are some front-end technologies I am familiar with:</p>
 			<ul class="tech-list">
-				{#each frontEndIcons as { id, href, icon } (id)}
+				{#each frontEndIcons as { id, name, href, icon } (id)}
 					<li>
-						<a {href} target="_blank">
+						<a {href} target="_blank" class="tooltip">
 							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color}` : ""} />
+							<span class="tooltiptext">{name}</span>
 						</a>
 					</li>
 				{/each}
@@ -132,14 +149,17 @@
 
 		h2 {
 			font-size: var(--fz-2xl);
-			margin-bottom: var(--gap-lg);
-		}
-
-		section {
-			padding: var(--gap-lg);
 			margin-block: var(--gap-lg);
-			border-radius: var(--radius-xl);
-			background: var(--bg-secondary);
+		}
+	}
+
+	.container {
+		background: var(--bg-secondary);
+		padding: var(--gap-lg);
+		border-radius: var(--radius-xl);
+
+		p {
+			margin-block: var(--gap-small);
 		}
 	}
 
@@ -150,6 +170,10 @@
 	.tech-list {
 		justify-content: center;
 		font-size: var(--fz-3xl);
+
+		li {
+			padding: var(--gap-small);
+		}
 
 		li:hover {
 			background: var(--bg-primary);

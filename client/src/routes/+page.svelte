@@ -9,6 +9,7 @@
 	const techList: TechIcon[] = [
 		{
 			id: v4(),
+			name: "React JS",
 			href: "https://react.dev/",
 			icon: {
 				icon: "logos:react"
@@ -16,6 +17,7 @@
 		},
 		{
 			id: v4(),
+			name: "Svelte",
 			href: "https://svelte.dev/",
 			icon: {
 				icon: "skill-icons:svelte"
@@ -23,6 +25,7 @@
 		},
 		{
 			id: v4(),
+			name: "Node JS",
 			href: "https://nodejs.org/en",
 			icon: {
 				icon: "devicon:nodejs"
@@ -30,6 +33,7 @@
 		},
 		{
 			id: v4(),
+			name: "Express JS",
 			href: "https://expressjs.com/",
 			icon: {
 				icon: "skill-icons:expressjs-light"
@@ -37,6 +41,7 @@
 		},
 		{
 			id: v4(),
+			name: "GraphQL",
 			href: "https://graphql.org/",
 			icon: {
 				icon: "mdi:graphql",
@@ -45,6 +50,7 @@
 		},
 		{
 			id: v4(),
+			name: "Rust",
 			href: "https://www.rust-lang.org/",
 			icon: {
 				icon: "skill-icons:rust"
@@ -52,6 +58,7 @@
 		},
 		{
 			id: v4(),
+			name: "Tauri",
 			href: "https://tauri.app/",
 			icon: {
 				icon: "skill-icons:tauri-light"
@@ -150,11 +157,12 @@
 			<ul class="tech-list">
 				{#each techList as tech (tech.id)}
 					<li>
-						<a target="_blank" href={tech.href}>
+						<a target="_blank" class="tooltip" href={tech.href}>
 							<iconify-icon
 								icon={tech.icon.icon}
 								style={tech.icon.color ? `color: ${tech.icon.color};` : ""}
 							/>
+							<span class="tooltiptext">{tech.name}</span>
 						</a>
 					</li>
 				{/each}
