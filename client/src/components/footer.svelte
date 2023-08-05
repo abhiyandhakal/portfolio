@@ -1,10 +1,6 @@
 <script lang="ts">
 	import "iconify-icon";
 	import { navItems, social } from "../data";
-
-	const handleContactForm = (e: Event) => {
-		e.preventDefault();
-	};
 </script>
 
 <footer>
@@ -42,7 +38,7 @@
 
 		<hr />
 
-		<form class="contact-form" on:submit={handleContactForm}>
+		<form class="contact-form" action="/?contact">
 			<h2>Contact Me</h2>
 
 			<label for="name">Name</label>

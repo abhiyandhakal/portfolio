@@ -70,13 +70,87 @@
 			icon: {
 				icon: "skill-icons:svelte"
 			}
-		},
+		}
+	];
+
+	const fullStackIcons: TechIcon[] = [
 		{
 			id: v4(),
 			name: "Next JS",
 			href: "https://nextjs.org/",
 			icon: {
 				icon: "teenyicons:nextjs-outline",
+				color: "var(--text-primary)"
+			}
+		},
+		{
+			id: v4(),
+			name: "SvelteKit",
+			href: "https://kit.svelte.dev/",
+			icon: {
+				icon: "vscode-icons:file-type-svelte"
+			}
+		},
+		{
+			id: v4(),
+			name: "Vite JS",
+			href: "https://vitejs.dev/",
+			icon: {
+				icon: "logos:vitejs-icon"
+			}
+		}
+	];
+
+	const backendIcons: TechIcon[] = [
+		{
+			id: v4(),
+			name: "Node JS",
+			href: "https://nodejs.org/en/",
+			icon: {
+				icon: "logos:nodejs-icon"
+			}
+		},
+		{
+			id: v4(),
+			name: "Express JS",
+			href: "https://expressjs.com/",
+			icon: {
+				icon: "skill-icons:expressjs-light"
+			}
+		},
+		{
+			id: v4(),
+			name: "MongoDB",
+			href: "https://www.mongodb.com/",
+			icon: {
+				icon: "logos:mongodb-icon"
+			}
+		},
+		{
+			id: v4(),
+			name: "GraphQL",
+			href: "https://graphql.org/",
+			icon: {
+				icon: "logos:graphql"
+			}
+		}
+	];
+
+	const desktopIcons: TechIcon[] = [
+		{
+			id: v4(),
+			name: "Tauri",
+			href: "https://tauri.app/",
+			icon: {
+				icon: "logos:tauri"
+			}
+		},
+		{
+			id: v4(),
+			name: "Electron JS",
+			href: "https://www.electronjs.org/",
+			icon: {
+				icon: "fontisto:electronjs",
 				color: "var(--text-primary)"
 			}
 		}
@@ -93,13 +167,14 @@
 	diverse skillset. I am currently studying in
 	<a href="https://soe.ku.edu.np/" target="_blank">Kathmandu University, School of Engineering</a>,
 	pursuing Computer Engineering, currently in 4<sup>th</sup> semester.
+
 	<section aria-labelledby="full-stack">
 		<h2 class="h2" id="full-stack">Full Stack Web Developer:</h2>
 		<p>
 			I excel in both <b>front-end</b> and <b>back-end</b> technologies, crafting visually appealing
 			web interfaces with robust functionality.
 		</p>
-		<br />
+		<!-- frontend icons -->
 		<div class="container">
 			<p class="center-text">Here are some front-end technologies I am familiar with:</p>
 			<ul class="tech-list">
@@ -113,19 +188,99 @@
 				{/each}
 			</ul>
 		</div>
-	</section>
-	<dt>TUI Application Dev:</dt>
-	<dd>
-		I enjoy building powerful and efficient Text User Interface applications, providing seamless
-		user interactions.
-	</dd>
-	<dt>Linux Enthusiast:</dt>
-	<dd>My love for Linux drives me to explore and optimize its open-source environment actively.</dd>
-	<dt>Desktop App Developer:</dt>
-	<dd>I have a knack for creating intuitive and feature-rich desktop applications.</dd>
 
-	With this versatile skill set, I'm eager to take on new challenges and contribute to innovative
-	projects. Let's collaborate and create something exceptional together!
+		<p>
+			Using these frontend technologies, I have built several web applications, including portfolio.
+		</p>
+
+		<p>
+			I am also well versed in JavaScript / TypeScript based backend technologies like NodeJS,
+			ExpressJs etc.
+		</p>
+
+		<!-- backend icons -->
+		<div class="container">
+			<p class="center-text">Here are some backend technologies I am familiar with:</p>
+			<ul class="tech-list">
+				{#each backendIcons as { id, name, href, icon } (id)}
+					<li>
+						<a {href} target="_blank" class="tooltip">
+							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color}` : ""} />
+							<span class="tooltiptext">{name}</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+
+		<p>
+			I am well versed in these backend technologies, and I have built several backend applications.
+		</p>
+
+		<p>
+			There are various full-stack frameworks that help integrate the frontend and the backend well.
+			I am also well versed in a couple of them. One of them, SvelteKit, is the framework the
+			current portfolio website is based on.
+		</p>
+
+		<!-- fullstack icons -->
+		<div class="container">
+			<p class="center-text">Here are some fullstack technologies I am familiar with:</p>
+			<ul class="tech-list">
+				{#each fullStackIcons as { id, name, href, icon } (id)}
+					<li>
+						<a {href} target="_blank" class="tooltip">
+							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color}` : ""} />
+							<span class="tooltiptext">{name}</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</section>
+
+	<section aria-labelledby="desktop">
+		<h2 id="desktop" class="h2">Desktop App Developer:</h2>
+		<p>I have a knack for creating intuitive and feature-rich desktop applications.</p>
+
+		<!-- desktop framework icons -->
+		<div class="container">
+			<p class="center-text">Here are some desktop application framworks I am familiar with:</p>
+			<ul class="tech-list">
+				{#each desktopIcons as { id, name, href, icon } (id)}
+					<li>
+						<a {href} target="_blank" class="tooltip">
+							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color}` : ""} />
+							<span class="tooltiptext">{name}</span>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</section>
+
+	<section aria-labelledby="tui-app">
+		<h2 class="h2" id="tui-app">TUI Application Dev:</h2>
+		<p>
+			I enjoy building powerful and efficient Text User Interface applications, providing seamless
+			user interactions using <a href="https://www.rust-lang.org/" target="_blank"
+				>Rust programming language</a
+			>.
+		</p>
+	</section>
+
+	<section aria-labelledby="linux">
+		<h2 class="h2" id="linux">Linux Enthusiast:</h2>
+		<p>
+			My love for Linux, both on desktop as well as server, drives me to explore and optimize its
+			open-source environment actively.
+		</p>
+	</section>
+
+	<p>
+		With this versatile skill set, I'm eager to take on new challenges and contribute to innovative
+		projects. Let's collaborate and create something exceptional together!
+	</p>
 </main>
 
 <Footer />
@@ -153,14 +308,15 @@
 		}
 	}
 
+	p {
+		margin-block: var(--gap-lg);
+	}
+
 	.container {
 		background: var(--bg-secondary);
 		padding: var(--gap-lg);
 		border-radius: var(--radius-xl);
-
-		p {
-			margin-block: var(--gap-small);
-		}
+		margin-block: var(--gap-lg);
 	}
 
 	.center-text {
