@@ -13,6 +13,7 @@
 </script>
 
 <nav class={hamburgerClicked ? "show-nav" : ""}>
+	<a href="#content" class="skip-to-content">Skip To Content</a>
 	<div>
 		<!-- logo -->
 		<span class="logo" style="font-size: 1.6rem">

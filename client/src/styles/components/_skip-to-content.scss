@@ -1,0 +1,16 @@
+.skip-to-content {
+	position: absolute !important;
+	background: var(--bg-btn) !important;
+	padding: var(--gap-small) var(--gap-lg) !important;
+	color: var(--text-dark) !important;
+	text-decoration: none !important;
+	font-weight: 700 !important;
+	top: 0;
+	transform: translateY(-100%);
+	transition: var(--transition-1);
+
+	&:focus {
+		transform: translateY(0%);
+		outline: none;
+	}
+}
