@@ -143,7 +143,7 @@
 <header>
 	<Nav />
 
-	<section class="hero">
+	<section class="hero" id="content">
 		<section class="hero-desc">
 			<div>
 				<h1>

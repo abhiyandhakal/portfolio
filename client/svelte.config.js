@@ -15,7 +15,12 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
+		}),
+		alias: {
+			$components: "./src/components",
+			$styles: "./src/styles",
+			$db: "./src/db"
+		}
 	}
 };
 

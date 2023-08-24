@@ -1,4 +1,5 @@
 <script lang="ts">
+	import "$styles/style.scss";
 	import "iconify-icon";
 	import { navItems, social } from "../data";
 </script>

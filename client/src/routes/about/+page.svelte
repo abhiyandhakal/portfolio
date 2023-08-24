@@ -162,7 +162,7 @@
 	<h1 class="h1">About Me</h1>
 </header>
 
-<main>
+<main id="content">
 	Hi<iconify-icon icon="noto:waving-hand" />! I'm <b>Abhiyan Dhakal</b>, a tech eithusiast with a
 	diverse skillset. I am currently studying in
 	<a href="https://soe.ku.edu.np/" target="_blank">Kathmandu University, School of Engineering</a>,
