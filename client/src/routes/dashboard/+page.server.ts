@@ -1,4 +1,4 @@
-import { fail } from "@sveltejs/kit";
+import { fail, type Actions } from "@sveltejs/kit";
 import jwt from "jsonwebtoken";
 import type { PageServerLoad } from "./$types";
 import { JWT_SECRET } from "$env/static/private";
@@ -7,12 +7,6 @@ export const prerender = false;
 
 export const load: PageServerLoad = async (event) => {
 	const token = event.cookies.get("token");
-
-	if (!token) {
-		return fail(401, {
-			authenticated: false
-		});
-	}
 
 	try {
 		const decoded = jwt.verify(token as string, JWT_SECRET) as {
@@ -37,3 +31,13 @@ export const load: PageServerLoad = async (event) => {
 		});
 	}
 };
+
+export const actions = {
+	logout: ({ cookies }) => {
+		cookies.delete("token");
+
+		return {
+			authenticated: false
+		};
+	}
+} satisfies Actions;
