@@ -1,23 +1,25 @@
 <script lang="ts">
-	export let form: import("./$types").ActionData;
-
+	import type { ActionData } from "./$types";
 	import "$styles/style.scss";
 	import Nav from "$components/nav.svelte";
 	import Footer from "$components/footer.svelte";
 	import Alert from "$components/alert.svelte";
-	import { redirect } from "@sveltejs/kit";
 
-	if (form?.error) {
-		setTimeout(() => {
-			if (form?.error) {
-				form.error = "";
-			}
-		}, 5000);
-	}
+	export let form: ActionData;
+
+	let isSignedIn: boolean = false;
 
 	if (form?.message) {
-		redirect(303, "/dashboard");
+		isSignedIn = true;
 	}
+
+	setTimeout(() => {
+		if (form?.error) {
+			form.error = "";
+		} else if (form?.message) {
+			form.message = "";
+		}
+	}, 5000);
 
 	let showPass = false;
 </script>
@@ -30,6 +32,12 @@
 <main class="container" id="content">
 	{#if form?.error}
 		<Alert type="error">{form.error}</Alert>
+	{:else if form?.message}
+		<Alert type="success">{form.message}</Alert>
+	{/if}
+
+	{#if isSignedIn}
+		<p style="font-size: var(--fz-2xl);">Go to <a class="link" href="/dashboard">Dashboard</a></p>
 	{/if}
 
 	<form method="POST">
