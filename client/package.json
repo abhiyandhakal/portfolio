@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"axios": "^1.4.0",
 		"eslint-plugin-svelte": "^2.33.0",
 		"iconify-icon": "^1.0.7",
 		"jsonwebtoken": "^9.0.1",
