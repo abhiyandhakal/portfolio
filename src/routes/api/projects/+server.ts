@@ -1,6 +1,7 @@
 import { json } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 import Project from "$db/models/project";
+import authorize from "$lib/authorize";
 
 export const GET: RequestHandler = () => {
 	const number = Math.floor(Math.random() * 6) + 1;
@@ -10,7 +11,17 @@ export const GET: RequestHandler = () => {
 	});
 };
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, cookies }) => {
+	const token = cookies.get("token");
+
+	if (!token) {
+		return json({ success: false, error: "Unauthorized" }, { status: 401 });
+	}
+
+	if (!authorize(token as string)) {
+		return json({ success: false, error: "Unauthorized" }, { status: 401 });
+	}
+
 	try {
 		const data = await request.json();
 
