@@ -1,7 +1,5 @@
 <script lang="ts">
-	import "../../styles/style.scss";
-	import Nav from "../../components/nav.svelte";
-	import Footer from "../../components/footer.svelte";
+	import "$styles/style.scss";
 	import "iconify-icon";
 	import { v4 } from "uuid";
 	import type { TechIcon } from "../../app.d";
@@ -158,7 +156,6 @@
 </script>
 
 <header>
-	<Nav />
 	<h1 class="h1">About Me</h1>
 </header>
 
@@ -282,8 +279,6 @@
 		projects. Let's collaborate and create something exceptional together!
 	</p>
 </main>
-
-<Footer />
 
 <style lang="scss">
 	main {

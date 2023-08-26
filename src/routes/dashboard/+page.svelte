@@ -1,7 +1,5 @@
 <script lang="ts">
 	import "$styles/style.scss";
-	import Nav from "$components/nav.svelte";
-	import Footer from "$components/footer.svelte";
 	import AddProject from "./add-project.svelte";
 	import Search from "./search.svelte";
 	import type { PageServerData } from "../$types";
@@ -25,7 +23,6 @@
 </script>
 
 <header>
-	<Nav />
 	<h1 class="h1">Dashboard</h1>
 </header>
 
@@ -54,8 +51,6 @@
 		</p>
 	{/if}
 </main>
-
-<Footer />
 
 <style lang="scss">
 	main {

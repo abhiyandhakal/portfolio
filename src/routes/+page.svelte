@@ -1,7 +1,5 @@
 <script lang="ts">
-	import Nav from "../components/nav.svelte";
-	import Footer from "../components/footer.svelte";
-	import "../styles/style.scss";
+	import "$styles/style.scss";
 	import "iconify-icon";
 	import type { TechIcon } from "../app.d";
 	import { v4 } from "uuid";
@@ -141,8 +139,6 @@
 </script>
 
 <header>
-	<Nav />
-
 	<section class="hero" id="content">
 		<section class="hero-desc">
 			<div>
@@ -223,8 +219,6 @@
 		</div>
 	</section>
 </main>
-
-<Footer />
 
 <style lang="scss">
 	header {
