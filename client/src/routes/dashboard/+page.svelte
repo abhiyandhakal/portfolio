@@ -2,9 +2,26 @@
 	import "$styles/style.scss";
 	import Nav from "$components/nav.svelte";
 	import Footer from "$components/footer.svelte";
+	import AddProject from "./add-project.svelte";
+	import Search from "./search.svelte";
 	import type { PageServerData } from "../$types";
 
 	export let data: PageServerData | { authenticated: boolean };
+
+	let currentTab = "add-project";
+
+	const tabs = [
+		{
+			name: "add-project",
+			label: "Add project",
+			item: AddProject
+		},
+		{
+			name: "search",
+			label: "Search projects",
+			item: Search
+		}
+	];
 </script>
 
 <header>
@@ -14,11 +31,21 @@
 
 <main>
 	{#if data?.authenticated}
-		<p>Upload a file</p>
-		<form action="/api/dashboard" method="post">
-			<input type="file" name="file" />
-			<button type="submit">Upload</button>
+		<form action="?/logout" method="post">
+			<button class="btn logout">Log Out</button>
 		</form>
+
+		<div class="tabs-container">
+			{#each tabs as tab}
+				<button class="btn" on:click={() => (currentTab = tab.name)}>{tab.label}</button>
+			{/each}
+		</div>
+
+		{#each tabs as tab}
+			{#if currentTab === tab.name}
+				<svelte:component this={tab.item} />
+			{/if}
+		{/each}
 	{:else}
 		<h2 class="h2">You are not authenticated</h2>
 
@@ -26,14 +53,11 @@
 			Please <a class="link" href="/signin">sign in</a> to access the dashboard.
 		</p>
 	{/if}
-	<form action="?/logout" method="post">
-		<button class="btn logout">Log Out</button>
-	</form>
 </main>
 
 <Footer />
 
-<style>
+<style lang="scss">
 	main {
 		min-height: 50vh;
 		margin-inline: auto;
@@ -45,5 +69,18 @@
 		text-align: center;
 		padding: var(--gap-lg);
 		font-size: var(--fz-2xl);
+	}
+
+	.logout {
+		position: absolute;
+		top: calc(var(--nav-height) + var(--gap-lg));
+		right: var(--gap-lg);
+	}
+
+	.tabs-container {
+		display: flex;
+		justify-content: center;
+		gap: var(--gap-small);
+		flex-wrap: wrap;
 	}
 </style>
