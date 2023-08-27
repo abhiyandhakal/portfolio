@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Project } from "$db/models/project";
 
-	export let data: { projects: Project[] } = { projects: [] };
+	// export let data: { projects: Project[] } = { projects: [] };
 
 	const getImage = ({ thumbnail }: Project): string => {
 		if (thumbnail.buffer) {
@@ -18,11 +18,12 @@
 </header>
 
 <main>
-	{#each data?.projects as project (project.repo)}
-		<div>
-			<img src={getImage(project)} alt={project.name} />
-		</div>
-	{/each}
+	<!-- {#each data?.projects as project (project.repo)} -->
+	<!-- 	<div> -->
+	<!-- 		<img src={getImage(project)} alt={project.name} /> -->
+	<!-- 	</div> -->
+	<!-- {/each} -->
+	<p>Currently under development</p>
 </main>
 
 <style lang="scss">
