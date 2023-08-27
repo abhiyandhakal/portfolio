@@ -3,12 +3,10 @@ import type { RequestHandler } from "./$types";
 import Project from "$db/models/project";
 import authorize from "$lib/authorize";
 
-export const GET: RequestHandler = () => {
-	const number = Math.floor(Math.random() * 6) + 1;
+export const GET: RequestHandler = async () => {
+	const projects = await Project.find({});
 
-	return json({
-		number
-	});
+	return json({ success: true, data: projects }, { status: 200 });
 };
 
 export const POST: RequestHandler = async ({ request, cookies }) => {
@@ -46,13 +44,17 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 				);
 			}
 
-			if (data.thumbnail.type) {
-				if (!data.thumbnail.type.toString().includes("image")) {
-					return json(
-						{ success: false, error: "Project thumbnail type not supported" },
-						{ status: 400 }
-					);
-				}
+			if (!data.thumbnail.type) {
+				return json(
+					{ success: false, error: "Project thumbnail type not provided" },
+					{ status: 400 }
+				);
+			}
+			if (!data.thumbnail.type.toString().includes("image")) {
+				return json(
+					{ success: false, error: "Project thumbnail type not supported" },
+					{ status: 400 }
+				);
 			}
 		}
 
@@ -64,6 +66,7 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			articleLink: data.relatedArticle ? data.relatedArticle : "",
 			thumbnail: {
 				name: data.thumbnail.name,
+				type: data.thumbnail.type,
 				buffer: data.thumbnail.buffer
 			}
 		});

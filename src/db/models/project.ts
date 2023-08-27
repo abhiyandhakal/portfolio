@@ -1,5 +1,18 @@
 import mongoose, { Schema } from "mongoose";
 
+export interface Project {
+	name: string;
+	description: string;
+	platform: string;
+	repo: string;
+	articleLink?: string;
+	thumbnail: {
+		name: string;
+		type: string;
+		buffer: string;
+	};
+}
+
 const ProjectSchema = new Schema({
 	name: {
 		type: String,
@@ -26,8 +39,12 @@ const ProjectSchema = new Schema({
 			type: String,
 			required: true
 		},
+		type: {
+			type: String,
+			required: true
+		},
 		buffer: {
-			type: Buffer,
+			type: String,
 			required: true
 		}
 	}
