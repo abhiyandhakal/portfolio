@@ -26,16 +26,10 @@
 			link="https://github.com/abhiyandhakal/power-menu"
 			relatedContentLink={null}
 		>
-			<!-- It is a power menu application written in Tauri with svelte on frontend. It is a simple power -->
-			<!-- menu that can be used to shutdown, restart, logout, and lock the system. -->
-			<!-- <strong>Power Menu</strong> is an application written in <strong>Tauri</strong> with -->
-			<!-- <strong>Svelte</strong> on frontend. It includes features like shutdown, restart, logout, and suspend -->
-			<!-- the system. It also has an app menu that shows up in the system tray. -->
-
-			<strong>Power Menu</strong> is a handy application that lets you control your system's power
-			state. Developed with <strong>Tauri</strong> and <strong>Svelte</strong>, it offers a
-			user-friendly interface through a system tray icon (app menu). From this menu, you can perform
-			actions like shutting down, restarting, logging out, or even suspending your system.
+			Developed with <strong>Tauri</strong> and <strong>Svelte</strong>,
+			<strong>Power Menu</strong> offers a user-friendly interface through a system tray icon (app menu)
+			as well as a windowed interface. to perform actions like shutting down, restarting, logging out,
+			or suspending the system.
 		</ProjectCard>
 
 		<ProjectCard
