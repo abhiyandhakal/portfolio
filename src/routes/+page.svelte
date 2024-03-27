@@ -307,9 +307,10 @@
 		margin-block: calc(var(--gap-1) * 3);
 		position: absolute;
 		display: none;
-		bottom: var(--gap-1);
+		bottom: calc(var(--gap-1) * 0.5);
 		border-radius: 50%;
 		padding: var(--gap-lg);
+		height: 7rem;
 
 		font-size: 4rem;
 		padding-top: var(--gap-small);
@@ -380,6 +381,7 @@
 					border-radius: var(--radius-xl);
 					object-fit: cover;
 					object-position: center;
+					max-height: 35rem;
 				}
 
 				dl {
