@@ -3,7 +3,9 @@
 </script>
 
 <div class="card">
-	<img class="thumbnail" src={thumbnail} alt={title} />
+	<a href={link} target="_blank">
+		<img class="thumbnail" src={thumbnail} alt={title} />
+	</a>
 	<div class="card-content">
 		<h2 class="title">{title}</h2>
 		<p class="description">
