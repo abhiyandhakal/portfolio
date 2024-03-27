@@ -7,7 +7,7 @@
 		<img class="thumbnail" src={thumbnail} alt={title} />
 	</a>
 	<div class="card-content">
-		<h2 class="title">{title}</h2>
+		<h2 class="title"><a href={link}>{title}</a></h2>
 		<p class="description">
 			<slot />
 		</p>
@@ -55,6 +55,16 @@
 			.title {
 				font-size: var(--fz-3xl);
 				font-weight: 500;
+
+				a {
+					color: var(--text-primary);
+					text-decoration: none;
+					transition: color 0.2s ease;
+
+					&:hover {
+						color: var(--text-secondary);
+					}
+				}
 			}
 
 			.btn-container {
