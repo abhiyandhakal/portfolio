@@ -6,7 +6,7 @@
 	<h1 class="h1">My Projects</h1>
 </header>
 
-<main>
+<main id="content">
 	<section class="card-container">
 		<ProjectCard
 			title={"Sichu Nepal"}
