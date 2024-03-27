@@ -32,4 +32,13 @@ interface TechIcon extends TechIconWithoutName {
 	name: string;
 }
 
-export { Icon, Social, NavItem, TechIcon };
+type Project = {
+	id: string;
+	title: string;
+	thumbnail: string;
+	link: string;
+	description: string;
+	relatedContentLink?: string;
+};
+
+export { Icon, Social, NavItem, TechIcon, Project };

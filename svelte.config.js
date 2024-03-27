@@ -20,7 +20,8 @@ const config = {
 			$components: "./src/components",
 			$styles: "./src/styles",
 			$db: "./src/db",
-			$lib: "./src/lib"
+			$lib: "./src/lib",
+			$data: "./src/data"
 		}
 	}
 };
