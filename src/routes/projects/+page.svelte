@@ -1,16 +1,5 @@
 <script lang="ts">
-	import type { Project } from "$db/models/project";
-
-	// export let data: { projects: Project[] } = { projects: [] };
-
-	const getImage = ({ thumbnail }: Project): string => {
-		if (thumbnail.buffer) {
-			const file = new Blob([thumbnail.buffer], { type: thumbnail.type });
-			console.log(file);
-		}
-
-		return "";
-	};
+	import ProjectCard from "$components/project-card.svelte";
 </script>
 
 <header>
@@ -18,16 +7,31 @@
 </header>
 
 <main>
-	<!-- {#each data?.projects as project (project.repo)} -->
-	<!-- 	<div> -->
-	<!-- 		<img src={getImage(project)} alt={project.name} /> -->
-	<!-- 	</div> -->
-	<!-- {/each} -->
-	<p>Currently under development</p>
+	<section class="card-container">
+		<ProjectCard
+			title={"Kass Text Editor"}
+			thumbnail="/kass-text-editor.webp"
+			link={"https://github.com/abhiyandhakal/kass-text-editor"}
+			relatedContentLink={null}
+		>
+			<strong>Kass Text Editor</strong> is a simple terminal based text editor written in Rust. It
+			is a simple text editor with basic functionalities like saving, opening, and editing files. It
+			also has additional feature of multiple <strong>tabs</strong> which you can switch between to be
+			able to edit multiple files.
+		</ProjectCard>
+	</section>
 </main>
 
 <style lang="scss">
 	main {
 		min-height: 50vh;
+		max-width: 60rem;
+		margin-inline: auto;
+		padding: var(--gap-1);
+	}
+
+	.card-container {
+		display: grid;
+		gap: var(--gap-lg);
 	}
 </style>
