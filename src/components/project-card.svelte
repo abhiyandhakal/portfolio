@@ -27,12 +27,13 @@
 		border-radius: var(--radius-lg);
 		display: grid;
 		grid-template-columns: auto 1fr;
-		height: 20rem;
+		--height: 18rem;
+		height: var(--height);
 
 		.thumbnail {
 			border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 			object-fit: cover;
-			height: 20rem;
+			height: var(--height);
 			aspect-ratio: 1;
 			cursor: pointer;
 			transition: transform 0.3s ease;
@@ -45,7 +46,6 @@
 		.card-content {
 			padding: var(--gap-lg);
 			display: grid;
-			gap: var(--gap-lg);
 			align-content: space-between;
 
 			@media (max-width: 768px) {

@@ -19,6 +19,17 @@
 			also has additional feature of multiple <strong>tabs</strong> which you can switch between to be
 			able to edit multiple files.
 		</ProjectCard>
+
+		<ProjectCard
+			title={"Abhiyan.zsh"}
+			thumbnail="/abhiyan.zsh.webp"
+			link={"https://github.com/abhiyandhakal/abhiyan.zsh"}
+			relatedContentLink={null}
+		>
+			<strong>Abhiyan.zsh</strong> is a custom zsh theme that I created seeking minimalism. It includes
+			decorators for git branch, staged file count, unstaged file count and untract file count, username,
+			current working directory and the time.
+		</ProjectCard>
 	</section>
 </main>
 
@@ -32,6 +43,10 @@
 
 	.card-container {
 		display: grid;
-		gap: var(--gap-lg);
+		gap: var(--gap-xl);
+
+		@media (max-width: 768px) {
+			gap: var(--gap-lg);
+		}
 	}
 </style>
