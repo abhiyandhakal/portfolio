@@ -27,11 +27,12 @@
 		<section class="social-media">
 			<h2>Social Media</h2>
 			<ul>
-				{#each social as { id, href, icon } (id)}
+				{#each social as { id, href, icon, text } (id)}
 					<li>
-						<a {href} target="_blank">
+						<a {href} target="_blank" class="icon">
 							<iconify-icon icon={icon.icon} style={icon.color ? `color: ${icon.color};` : ""} />
 						</a>
+						<a {href} target="_blank" class="text">{text}</a>
 					</li>
 				{/each}
 			</ul>
@@ -39,26 +40,21 @@
 
 		<hr />
 
-		<form class="contact-form" action="/?contact">
+		<section class="contact-info">
 			<h2>Contact Me</h2>
 
-			<label for="name">Name</label>
-			<input type="name" class="textbox" placeholder="Your Name" id="name" required />
-
-			<label for="email">Email</label>
-			<input type="email" class="textbox" placeholder="your@example.com" id="email" required />
-
-			<label for="content">Content</label>
-			<textarea
-				class="textbox"
-				name="content"
-				id="content"
-				placeholder="Write your body here"
-				required
-			/>
-
-			<button class="btn" type="submit">Send</button>
-		</form>
+			<ul>
+				<li>
+					<iconify-icon icon="material-symbols:mail" />
+				</li>
+				<li>
+					<a href="mailto:itsabhiyandhakal@gmail.com"> itsabhiyandhakal@gmail.com</a>
+				</li>
+				<li>
+					<a href="mailto:contact@abhiyan.tech">contact@abhiyan.tech</a>
+				</li>
+			</ul>
+		</section>
 
 		<section class="copyright">
 			<p>Copyright (c) 2023 <span>Abhiyan Dhakal</span>. All rights reserved.</p>
@@ -169,19 +165,30 @@
 		justify-items: center;
 
 		ul {
-			display: flex;
+			display: grid;
 			justify-content: center;
-			width: fit-content;
 			font-size: var(--fz-2xl);
 
-			a {
-				padding: var(--gap-small);
-				display: block;
-				transition: var(--transition-1);
+			li {
+				display: flex;
+				align-items: start;
+				gap: var(--gap-small);
 
-				&:hover {
-					background: var(--bg-secondary);
-					border-radius: var(--radius-1);
+				.text {
+					font-size: var(--fz-xl);
+					color: var(--text-link);
+					text-decoration: none;
+				}
+
+				a {
+					padding: var(--gap-small);
+					display: block;
+					transition: var(--transition-1);
+
+					&:hover {
+						background: var(--bg-secondary);
+						border-radius: var(--radius-1);
+					}
 				}
 			}
 		}
@@ -190,6 +197,7 @@
 	.navigation {
 		display: grid;
 		justify-items: center;
+		align-items: start;
 
 		ul {
 			width: fit-content;
@@ -224,28 +232,6 @@
 		}
 	}
 
-	.contact-form {
-		display: grid;
-		width: fit-content;
-		grid-template-columns: 0.5fr 1.5fr;
-		align-items: center;
-		gap: var(--gap-small);
-		padding-inline: var(--gap-lg);
-
-		& > :first-child {
-			grid-column: 1 / -1;
-		}
-
-		h2 {
-			justify-self: center;
-		}
-
-		.btn {
-			width: fit-content;
-			grid-column: 2 / -1;
-		}
-	}
-
 	iconify-icon {
 		font-size: 1.2em;
 	}
@@ -273,6 +259,33 @@
 			background: var(--bg-primary);
 			display: block;
 			margin: var(--gap-small);
+		}
+	}
+
+	.contact-info {
+		display: grid;
+		// place-items: center;
+		justify-items: center;
+		ul {
+			display: grid;
+			padding: var(--gap-1);
+			place-items: center;
+			gap: var(--gap-small);
+
+			iconify-icon {
+				font-size: var(--fz-4xl);
+				color: var(--text-link);
+			}
+
+			a {
+				color: var(--text-link);
+				font-size: var(--fz-lg);
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 </style>

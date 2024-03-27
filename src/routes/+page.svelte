@@ -166,7 +166,7 @@
 
 			<div class="btn-container">
 				<a href="/about" class="btn">About Me</a>
-				<a href="/contact" class="btn btn-invert">Let's Chat</a>
+				<a href="mailto:itsabhiyandhakal@gmail.com" class="btn btn-invert">Let's Talk</a>
 			</div>
 
 			<button class="scroll-down btn-invert glow-effect" on:click={scroll} data-glow-offset="true">

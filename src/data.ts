@@ -50,15 +50,7 @@ const social: Social[] = [
 		text: "Twitter",
 		href: "https://twitter.com/itsabhiyan",
 		icon: {
-			icon: "logos:twitter"
-		}
-	},
-	{
-		id: v4(),
-		text: "Mail",
-		href: "mailto:itsabhiyandhakal@gmail.com",
-		icon: {
-			icon: "material-symbols:mail",
+			icon: "pajamas:twitter",
 			color: "var(--text-primary)"
 		}
 	}
