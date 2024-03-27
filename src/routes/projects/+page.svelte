@@ -9,6 +9,19 @@
 <main>
 	<section class="card-container">
 		<ProjectCard
+			title={"Sichu Nepal"}
+			thumbnail="/sichunepal.webp"
+			link={"https://www.sichunepal.com"}
+			relatedContentLink={null}
+		>
+			<strong>Sichu Nepal</strong> is an e-commerce marketplace for products related to pop culture,
+			anime, manga and comics. You can buy products like t-shirts, hoodies, posters, stickers,
+			keychains, and more. It is built with <strong>Next.js</strong> in the frontend and
+			<strong>Node.js</strong>
+			in the backend.
+		</ProjectCard>
+
+		<ProjectCard
 			title={"Kass Text Editor"}
 			thumbnail="/kass-text-editor.webp"
 			link={"https://github.com/abhiyandhakal/kass-text-editor"}

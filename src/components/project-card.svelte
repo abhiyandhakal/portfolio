@@ -7,7 +7,7 @@
 		<img class="thumbnail" src={thumbnail} alt={title} />
 	</a>
 	<div class="card-content">
-		<h2 class="title"><a href={link}>{title}</a></h2>
+		<h2 class="title"><a href={link} target="_blank">{title}</a></h2>
 		<p class="description">
 			<slot />
 		</p>
