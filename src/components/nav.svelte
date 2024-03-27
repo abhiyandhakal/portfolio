@@ -2,12 +2,6 @@
 	import "iconify-icon";
 	import { navItems } from "../data";
 
-	let active = <number>0;
-
-	if (typeof window !== "undefined") {
-		active = (navItems.find(({ href }) => href === window.location.pathname)?.id as number) ?? 0;
-	}
-
 	// hamburger
 	let hamburgerClicked = false;
 </script>
@@ -32,7 +26,7 @@
 				<li class="nav-item">
 					<span class="link-container">
 						<iconify-icon style={icon.color ? `color: ${icon.color};` : ""} icon={icon.icon} />
-						<a class={`hover-animate ${id === active ? "active" : null}`} {href} {target}>
+						<a class={`hover-animate`} {href} {target}>
 							{text}
 						</a>
 					</span>
