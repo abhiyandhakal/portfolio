@@ -17,13 +17,9 @@ const navItems: NavItem[] = [
 	},
 	{
 		id: 3,
-		href: "https://github.com/abhiyandhakal/portfolio",
-		text: "Contribute",
-		target: "_blank",
-		icon: {
-			icon: "mdi:github",
-			color: "var(--text-primary)"
-		}
+		href: "/blogs",
+		text: "Blogs",
+		icon: { icon: "bx:bx-book-open", color: "skyblue" }
 	}
 ];
 
