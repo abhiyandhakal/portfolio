@@ -63,6 +63,10 @@
 	</main>
 {/if}
 
+<main id="content">
+	<!--  -->
+</main>
+
 <style lang="scss">
 	main {
 		min-height: 50vh;

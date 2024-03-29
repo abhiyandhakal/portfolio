@@ -2,7 +2,7 @@
 	<h1 class="h1">Blogs</h1>
 </header>
 
-<main>
+<main id="content">
 	helloworld
 	<!-- // -->
 </main>
