@@ -27,7 +27,8 @@ const config = {
 			$styles: "./src/styles",
 			$db: "./src/db",
 			$lib: "./src/lib",
-			$data: "./src/data"
+			$data: "./src/data",
+			$types: "./src/app.d.ts"
 		}
 	},
 	extensions: [".svelte", ".md"]

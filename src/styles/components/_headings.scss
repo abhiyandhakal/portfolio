@@ -26,3 +26,10 @@
 		opacity: 0.5;
 	}
 }
+
+.h3 {
+	font-size: var(--fz-2xl);
+	padding-block: calc(var(--gap-small) / 3);
+	color: var(--text-secondary);
+	font-weight: 600;
+}
