@@ -41,4 +41,16 @@ type Project = {
 	relatedContentLink?: string;
 };
 
+export type BlogMetadata = {
+	title: string;
+	description: string;
+	date: string;
+};
+
+export type Blog = {
+	id: string;
+	metadata: BlogMetadata;
+	content: string;
+};
+
 export { Icon, Social, NavItem, TechIcon, Project };
