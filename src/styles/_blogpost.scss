@@ -1,0 +1,19 @@
+.blog {
+	h2 {
+		font-size: var(--fz-3xl);
+	}
+
+	p {
+		padding-block: var(--gap-small);
+	}
+
+	pre {
+		background: var(--bg-secondary);
+		padding: var(--gap-lg);
+		border-radius: var(--radius-lg);
+
+		code {
+			font-family: monospace;
+		}
+	}
+}

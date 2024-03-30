@@ -18,10 +18,6 @@
 		border-radius: var(--radius-1);
 		box-shadow: var(--shadow-3);
 
-		.subtitle {
-			color: var(--text-dim);
-		}
-
 		.h3 {
 			&:hover {
 				color: var(--text-link);
