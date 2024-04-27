@@ -4,7 +4,14 @@
 	}
 
 	p {
-		padding-block: var(--gap-small);
+		margin-block: 1.5rem;
+	}
+
+	code {
+		background: var(--bg-secondary);
+		padding: 3px 4px;
+		border-radius: 4px;
+		font-family: "Space Mono", "Courier New", Courier, monospace;
 	}
 
 	pre {
@@ -13,7 +20,8 @@
 		border-radius: var(--radius-lg);
 
 		code {
-			font-family: monospace;
+			background: unset;
+			padding: unset;
 		}
 	}
 }
