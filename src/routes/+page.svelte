@@ -190,7 +190,7 @@
 			<img src="/person.webp" alt="person" />
 			<div>
 				Hey there <iconify-icon icon="noto:waving-hand" />! I'm <b>Abhiyan Dhakal</b>, a tech
-				eithusiast with a diverse skillset as listed below.
+				enthusiast with a diverse skillset as listed below.
 				<dl>
 					<dt>Full Stack Web Developer:</dt>
 					<dd>
