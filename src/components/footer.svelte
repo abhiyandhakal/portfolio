@@ -50,9 +50,6 @@
 				<li>
 					<a href="mailto:itsabhiyandhakal@gmail.com"> itsabhiyandhakal@gmail.com</a>
 				</li>
-				<li>
-					<a href="mailto:contact@abhiyan.tech">contact@abhiyan.tech</a>
-				</li>
 			</ul>
 		</section>
 
