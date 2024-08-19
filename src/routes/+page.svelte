@@ -3,6 +3,12 @@
 	import "iconify-icon";
 	import type { TechIcon } from "../app.d";
 	import { v4 } from "uuid";
+	import { projects } from "$data";
+
+	// import function to register Swiper custom elements
+	import { register } from "swiper/element/bundle";
+	// register Swiper custom elements
+	register();
 
 	const techList: TechIcon[] = [
 		{
@@ -143,11 +149,11 @@
 		<section class="hero-desc">
 			<div>
 				<h1>
-					<span class="hi">Hi <iconify-icon icon="noto:waving-hand" />, I'm </span><span
-						><span class="name">Abhiyan Dhakal.</span></span
+					<span class="hi font-bold">Hi <iconify-icon icon="noto:waving-hand" />, I'm </span><span
+						><span class="name font-bold">Abhiyan Dhakal.</span></span
 					>
 				</h1>
-				<h2>I am <span>{getArticle(phrase)} {typingText}</span>.</h2>
+				<h2 class="text-2xl font-bold">I am <span>{getArticle(phrase)} {typingText}</span>.</h2>
 			</div>
 
 			<ul class="tech-list">
@@ -216,6 +222,37 @@
 			</div>
 
 			<a class="read-more" href="/about">Read More >></a>
+		</div>
+	</section>
+
+	<!-- projects -->
+	<section aria-labelledby="projects">
+		<div class="container">
+			<h2 class="h2" id="projects">My Projects</h2>
+			<div>
+				{#each projects as { id, title } (id)}
+					<div>
+						{title}
+					</div>
+				{/each}
+			</div>
+
+			<swiper-container slides-per-view="3" class="bg-black max-w-[var(--max-width)]">
+				<!-- <swiper-slide>Slide 1</swiper-slide>
+				<swiper-slide>Slide 2</swiper-slide>
+				<swiper-slide>Slide 3</swiper-slide>
+				<swiper-slide>Slide 4</swiper-slide>
+				<!-- <swiper-slide>Slide 5</swiper-slide> -->
+				<!-- <swiper-slide>Slide 6</swiper-slide> -->
+				<!-- <swiper-slide>Slide 7</swiper-slide> -->
+				<!-- <swiper-slide>Slide 8</swiper-slide> -->
+				<!-- <swiper-slide>Slide 9</swiper-slide> -->
+				{#each projects as { id, title } (id)}
+					<div>
+						{title}
+					</div>
+				{/each}
+			</swiper-container>
 		</div>
 	</section>
 </main>
@@ -346,22 +383,26 @@
 			}
 		}
 
+		.container {
+			padding: var(--gap-lg);
+			display: grid;
+			gap: var(--gap-lg);
+			margin-inline: auto;
+			max-width: var(--max-width);
+			place-items: center;
+			place-content: center;
+			padding-bottom: calc(var(--gap-lg) * 2);
+		}
+
 		[aria-labelledby="about-me"] {
 			padding: var(--gap-lg);
 
 			.container {
 				padding: var(--gap-lg);
 				border-radius: var(--radius-xl);
-				display: grid;
-				max-width: var(--max-width);
-				margin-inline: auto;
 				grid-template-columns: 0.5fr 1fr;
 				font-size: var(--fz-lg);
-				place-items: center;
-				place-content: center;
-				gap: var(--gap-lg);
 				position: relative;
-				padding-bottom: calc(var(--gap-lg) * 2);
 
 				@media (max-width: 1000px) {
 					grid-template-columns: 1fr;
