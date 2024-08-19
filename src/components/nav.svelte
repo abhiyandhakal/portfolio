@@ -11,7 +11,10 @@
 	<div>
 		<!-- logo -->
 		<span class="logo" style="font-size: 1.6rem">
-			<a href="/">AbhiyanDhakal</a>
+			<a href="/" class="flex items-center gap-2">
+				<img src="/favicon.ico" alt="" class="h-8" />
+				AbhiyanDhakal</a
+			>
 		</span>
 
 		<!-- hamburger -->
