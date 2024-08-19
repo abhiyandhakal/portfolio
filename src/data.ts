@@ -67,7 +67,7 @@ const projects: Project[] = [
 	},
 	{
 		id: v4(),
-		title: "Smart Session Manager (SSM)",
+		title: "SSM",
 		thumbnail: "/ssm.webp",
 		link: "https://github.com/abhiyandhakal/ssm",
 		description: `<strong>Smart Session Manager (SSM)</strong> is a tool designed to manage Tmux sessions
