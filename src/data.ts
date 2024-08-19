@@ -67,6 +67,15 @@ const projects: Project[] = [
 	},
 	{
 		id: v4(),
+		title: "Smart Session Manager (SSM)",
+		thumbnail: "/ssm.webp",
+		link: "https://github.com/abhiyandhakal/ssm",
+		description: `<strong>Smart Session Manager (SSM)</strong> is a tool designed to manage Tmux sessions
+		efficiently, focusing on project-based session management. With SSM, you can easily navigate through 
+		sessions using simple commands and aliases.`
+	},
+	{
+		id: v4(),
 		title: "Kass Text Editor",
 		thumbnail: "/kass-text-editor.webp",
 		link: "https://github.com/abhiyandhakal/kass-text-editor",
@@ -96,15 +105,6 @@ const projects: Project[] = [
 		description: `<strong>Abhiyan.zsh</strong> is a custom zsh theme that I created seeking minimalism. It includes
 			decorators for git branch, staged file count, unstaged file count and untract file count, username,
 			current working directory and the time.`
-	},
-	{
-		id: v4(),
-		title: "Smart Session Manager (SSM)",
-		thumbnail: "/ssm.webp",
-		link: "https://github.com/abhiyandhakal/ssm",
-		description: `<strong>Smart Session Manager (SSM)</strong> is a tool designed to manage Tmux sessions
-		efficiently, focusing on project-based session management. With SSM, you can easily navigate through 
-		sessions using simple commands and aliases.`
 	}
 ];
 

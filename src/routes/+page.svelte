@@ -7,6 +7,7 @@
 
 	// import function to register Swiper custom elements
 	import { register } from "swiper/element/bundle";
+	import { onMount } from "svelte";
 	// register Swiper custom elements
 	register();
 
@@ -142,6 +143,21 @@
 			behavior: "smooth"
 		});
 	};
+
+	function getSlidesPerView(size: number): number {
+		if (size < 600) return 1;
+		if (size < 900) return 2;
+		if (size < 1300) return 3;
+		return 4;
+	}
+
+	let slidesPerView = 3;
+	onMount(() => {
+		slidesPerView = getSlidesPerView(window.innerWidth);
+		window.addEventListener("resize", () => {
+			slidesPerView = getSlidesPerView(window.innerWidth);
+		});
+	});
 </script>
 
 <header>
@@ -229,30 +245,32 @@
 	<section aria-labelledby="projects">
 		<div class="container">
 			<h2 class="h2" id="projects">My Projects</h2>
-			<div>
-				{#each projects as { id, title } (id)}
-					<div>
-						{title}
-					</div>
-				{/each}
-			</div>
 
-			<swiper-container slides-per-view="3" class="bg-black max-w-[var(--max-width)]">
-				<!-- <swiper-slide>Slide 1</swiper-slide>
-				<swiper-slide>Slide 2</swiper-slide>
-				<swiper-slide>Slide 3</swiper-slide>
-				<swiper-slide>Slide 4</swiper-slide>
-				<!-- <swiper-slide>Slide 5</swiper-slide> -->
-				<!-- <swiper-slide>Slide 6</swiper-slide> -->
-				<!-- <swiper-slide>Slide 7</swiper-slide> -->
-				<!-- <swiper-slide>Slide 8</swiper-slide> -->
-				<!-- <swiper-slide>Slide 9</swiper-slide> -->
-				{#each projects as { id, title } (id)}
-					<div>
-						{title}
-					</div>
+			<swiper-container
+				slides-per-view={slidesPerView}
+				class="max-w-[var(--max-width)] w-screen p-4 grid place-content-center"
+				mousewheel="true"
+				navigation="true"
+				pagination="true"
+			>
+				{#each projects as { id, title, thumbnail, link } (id)}
+					<swiper-slide class="w-80 grid place-content-center">
+						<div
+							class="bg-[var(--bg-secondary)] grid place-items-center w-80 rounded-2xl shadow-2xl"
+						>
+							<a href={link} class="hover:[&_img]:-rotate-6" target="_blank">
+								<img src={thumbnail} alt={title} class="h-80 w-80 rounded-t-2xl transition" />
+							</a>
+							<h2
+								class="h3 text-[var(--text-primary)] hover:text-[var(--text-secondary)] h-24 p-4 grid place-items-center"
+							>
+								<a target="_blank" href={link} class="text-center">{title}</a>
+							</h2>
+						</div>
+					</swiper-slide>
 				{/each}
 			</swiper-container>
+			<a class="read-more text-[var(--text-link)]" href="/projects">View More Projects>></a>
 		</div>
 	</section>
 </main>
@@ -403,6 +421,7 @@
 				grid-template-columns: 0.5fr 1fr;
 				font-size: var(--fz-lg);
 				position: relative;
+				padding-bottom: calc(var(--gap-lg) * 2);
 
 				@media (max-width: 1000px) {
 					grid-template-columns: 1fr;
@@ -442,11 +461,21 @@
 
 			.read-more {
 				position: absolute;
-				bottom: var(--gap-lg);
+				bottom: 0;
 				left: 50%;
 				transform: translateX(-50%);
 				color: var(--text-link);
 			}
 		}
+	}
+
+	swiper-container::part(button-next) {
+		background: var(--bg-primary);
+		@apply p-2 rounded;
+	}
+
+	swiper-container::part(button-prev) {
+		background: var(--bg-primary);
+		@apply p-2 rounded;
 	}
 </style>
