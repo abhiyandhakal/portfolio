@@ -161,9 +161,7 @@
 
 <main id="content">
 	Hi<iconify-icon icon="noto:waving-hand" />! I'm <b>Abhiyan Dhakal</b>, a tech eithusiast with a
-	diverse skillset. I am currently studying in
-	<a href="https://soe.ku.edu.np/" target="_blank">Kathmandu University, School of Engineering</a>,
-	pursuing Computer Engineering, currently in 5<sup>th</sup> semester.
+	diverse skillset.
 
 	<section aria-labelledby="full-stack">
 		<h2 class="h2" id="full-stack">Full Stack Web Developer:</h2>
